@@ -1,0 +1,195 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item-divider>
+          <ion-label class="divider--title">Datos de la cita</ion-label>
+        </ion-item-divider>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-grid>
+
+          <ion-row>
+            <ion-col size="12" class="flex--centered">
+              <ion-label>
+                <b>Fecha: </b>{{cita.fecha}}
+              </ion-label>
+            </ion-col>
+
+            <ion-col size="12" class="flex--centered">
+              <ion-label>
+                <b>Motivo: </b>{{cita.motivo}}
+              </ion-label>
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item-divider>
+          <ion-label class="divider--title">Datos del dueño</ion-label>
+        </ion-item-divider>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" class="flex--centered">
+              <img [src]="cita.mascota.dueno.imagenUrl" class="image__profile"
+                onerror="this.src = 'assets/img/profile.jpeg'">
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="flex--centered">
+              <ion-label>
+                <b>Nombre: </b>{{cita.mascota.dueno.nombres}}
+              </ion-label>
+            </ion-col>
+
+            <ion-col size="12" class="flex--centered">
+              <ion-label>
+                <b>Identificación: </b>{{cita.mascota.dueno.identificacion}}
+              </ion-label>
+            </ion-col>
+
+            <ion-col size="12" class="flex--centered">
+              <ion-label>
+                <b>Teléfono: </b>{{cita.mascota.dueno.telefono}}
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item-divider>
+          <ion-label class="divider--title">Datos de la mascota</ion-label>
+        </ion-item-divider>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12" class="flex--centered">
+              <img [src]="cita.mascota.imagenUrl" class="image__profile" onerror="this.src = 'assets/img/profile.jpeg'">
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="flex--centered">
+              <ion-label>
+                <b>Nombre: </b>{{cita.mascota.nombres}}
+              </ion-label>
+            </ion-col>
+
+            <ion-col size="12" class="flex--centered">
+              <ion-label>
+                <b>Raza: </b>{{cita.mascota.raza}}
+              </ion-label>
+            </ion-col>
+
+            <ion-col size="12" class="flex--centered">
+              <ion-label>
+                <b>Nacimiento: </b>{{cita.mascota.fechaNacimiento}}
+              </ion-label>
+            </ion-col>
+
+            <ion-col size="12" class="flex--centered">
+              <ion-label>
+                <b>Sexo: </b>{{cita.mascota.sexo}}
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-item-divider>
+          <ion-label class="divider--title">Receta</ion-label>
+        </ion-item-divider>
+      </ion-col>
+
+      <ion-col size="12" *ngFor="let medicamentoCita of medicamentosCita">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              {{medicamentoCita.medicamento.nombre}}
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <form (ngSubmit)="actualizarMedicamento($event, medicamentoCita)">
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-grid>
+                      <ion-row class="flex--centered">
+                        <ion-col size="4">
+                          <ion-label><b>Cantidad: </b></ion-label>
+                        </ion-col>
+                        <ion-col size="6">
+                          <ion-card>
+                            <ion-input type="number" placeholder="Cantidad" name="cantidad"
+                              [value]="medicamentoCita.cantidad"></ion-input>
+                          </ion-card>
+                        </ion-col>
+                        <ion-col size="2">
+                          <ion-label>
+                            {{medicamentoCita.medicamento.unidadMedida}}
+                          </ion-label>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-col>
+                  <ion-col size="12">
+                    <ion-grid>
+                      <ion-row class="flex--centered">
+                        <ion-col size="4">
+                          <ion-label><b>Cada: </b></ion-label>
+                        </ion-col>
+                        <ion-col size="6">
+                          <ion-card>
+                            <ion-input type="number" placeholder="Frecuencia" name="frecuencia"
+                              [value]="medicamentoCita.frecuencia"></ion-input>
+                          </ion-card>
+                        </ion-col>
+                        <ion-col size="2">
+                          <ion-label>
+                            hrs
+                          </ion-label>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-button expand="block" shape="round" mode="ios" color="tertiary" type="submit">Guardar
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </form>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" class="flex--centered">
+        <ion-button color="secondary" shape="round" mode="ios" (click)="agregarMedicamento()">
+          Agregar medicamentos
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

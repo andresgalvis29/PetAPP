@@ -1,0 +1,39 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="flex--centered">
+        <ion-button mode="ios" shape="round" color="secondary" (click)="agregarCita()">
+          Agregar cita
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" *ngFor="let cita of citas">
+        <ion-card button (click)="detalleCita(cita)">
+          <ion-card-header>
+            <ion-card-title>
+              {{cita.fecha}}
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12">
+                  <ion-label><b>Dueño de la mascota: </b>{{cita.mascota.dueno.nombres}}</ion-label>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-label><b>Nombre de la mascota: </b>{{cita.mascota.nombres}}</ion-label>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-label><b>Motivo: </b>{{cita.motivo}}</ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

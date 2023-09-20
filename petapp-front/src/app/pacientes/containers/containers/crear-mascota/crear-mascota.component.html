@@ -1,0 +1,49 @@
+<ion-content>
+  <form [formGroup]="formCrearMascota" (ngSubmit)="crearMascota()">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" class="flex--centered">
+          <ion-card class="image__profile" button (click)="tomarFoto()">
+            <img [src]="imagen.value ? imagen.value : 'assets/img/camara.png'" class="image__profile">
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-card>
+            <ion-input type="text" placeholder="Nombres" formControlName="nombres"></ion-input>
+          </ion-card>
+
+          <ion-card>
+            <ion-input type="text" placeholder="Raza" formControlName="raza"></ion-input>
+          </ion-card>
+
+          <ion-card>
+            <ion-select placeholder="Sexo" formControlName="sexo">
+              <ion-select-option value="macho">Macho</ion-select-option>
+              <ion-select-option value="hembra">Hembra</ion-select-option>
+            </ion-select>
+          </ion-card>
+
+          <ion-card>
+            <ion-label class="datepicker--title">Fecha de nacimiento</ion-label>
+            <ion-datetime presentation="date" formControlName="fechaNacimiento">
+            </ion-datetime>
+          </ion-card>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12" class="flex--centered">
+          <ion-button color="secondary" shape="round" mode="ios" type="submit">
+            Guardar
+          </ion-button>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

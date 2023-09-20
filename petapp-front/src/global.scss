@@ -1,0 +1,100 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.image {
+    &__profile {
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+    }
+}
+
+ion-card-header {
+    background-color: var(--ion-color-primary);
+
+    ion-card-title {
+        text-align: center;
+        color: white;
+    }
+}
+
+.button {
+    &__container {
+        &--centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+ion-toolbar {
+    --background: var(--ion-color-primary);
+    --color: white;
+}
+
+.flex {
+    &--centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+ion-toolbar {
+    ion-item {
+        background-color: var(--ion-color-primary);
+
+        ion-back-button {
+            color: white;
+        }
+
+        ion-title {
+            color: white;
+        }
+    }
+}
+
+.edit--icon {
+    font-size: xx-large;
+}
+
+.datepicker--title {
+    margin: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.accordion--full-width {
+    width: -webkit-fill-available;
+}
+
+ion-card {
+    border-radius: 24px;
+}

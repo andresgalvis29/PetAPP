@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/edison/Documents/Universidad/Emprendimiento/petapp-front/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/edison/.gradle/caches/transforms-3/edd5a18fa5f45e1cd7b5f13581bee1bb/transformed/material-1.3.0/res/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,107",
+                        "endColumns": "51,76",
+                        "endOffsets": "102,179"
+                    }
+                }
+            ]
+        }
+    ]
+}

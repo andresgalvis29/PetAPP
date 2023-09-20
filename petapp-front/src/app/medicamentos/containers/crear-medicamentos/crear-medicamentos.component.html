@@ -1,0 +1,33 @@
+<ion-content>
+  <form [formGroup]="formCrearMedicamento" (ngSubmit)="crearMedicamento()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-card>
+            <ion-input type="text" placeholder="Nombre" formControlName="nombre"></ion-input>
+          </ion-card>
+        </ion-col>
+        
+        <ion-col size="12">
+          <ion-card>
+            <ion-input type="text" placeholder="Unidad de medida" formControlName="unidadMedida"></ion-input>
+          </ion-card>
+        </ion-col>
+        
+        <ion-col size="12">
+          <ion-card>
+            <ion-input type="text" placeholder="Tipo" formControlName="tipo"></ion-input>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col size="12" class="flex--centered">
+          <ion-button type="submit" color="secondary" shape="round" mode="ios" type="submit">
+            Guardar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

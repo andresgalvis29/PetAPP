@@ -1,0 +1,40 @@
+<ion-content>
+  <form [formGroup]="formCrearDueno" (ngSubmit)="crearDueno()">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="flex--centered">
+        <ion-card class="image__profile" button (click)="tomarFoto()" >
+            <img [src]="imagen.value ? imagen.value : 'assets/img/camara.png'" class="image__profile">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-card>
+          <ion-input type="text" placeholder="Nombres" formControlName="nombres"></ion-input>
+        </ion-card>
+
+        <ion-card>
+          <ion-input type="text" placeholder="Identificación" formControlName="identificacion"></ion-input>
+        </ion-card>
+
+        <ion-card>
+          <ion-input type="text" placeholder="Teléfono" formControlName="telefono"></ion-input>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12" class="flex--centered">
+        <ion-button type="submit" color="secondary" shape="round" mode="ios">
+          Guardar
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</form>
+
+</ion-content>
